@@ -1,0 +1,5 @@
+xampp - apache -> xampp/php/php.init megnyitása -> extension=oci8_12c és extension=pdo_oci előtti pontosveszzőt kivenni
+cx_Oracle modul letöltése - pip install cx_Oracle --upgrade
+oracle_instant_client letöltése (https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html) - Basic Package windows.x64-12.2.0.1.0.zip -> telepítési mappa hozzáadása a PATH-hoz (rendszerváltozóknál)
+flask modul - pip install FLask
+a program futásához szükséges, hogy a docker-en fusson az adatbázis

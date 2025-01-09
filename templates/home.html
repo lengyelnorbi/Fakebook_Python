@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block links %}
+    <style>
+      
+    </style>
+    {% endblock %}
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+<body>
+    <form action="{{ home }}" method="POST">
+        <select name="tables" id="tables">
+            <option value="FELHASZNALOK">Felhasználók</option>
+            <option value="PROFILOK">Profilok</option>
+            <option value="ALBUMOK">Albumok</option>
+            <option value="ISMEROSOK">Ismerősök</option>
+            <option value="CSOPORTOK">Csoportok</option>
+            <option value="CSOPORT_TAGOK">Csoport tagok</option>
+            <option value="ENGEDELYEK">Engedélyek</option>
+            <option value="NEVNAPOK">Névnapok</option>
+            <option value="FELTOLTOTT_KEPEK">Feltöltött képek</option>
+            <option value="ALBUM_KEPEK">Album képek</option>
+            <option value="KEP_MEGJEGYZESEK">Kép megjegyzések</option>
+            <option value="PROFIL_MEGJEGYZESEK">Profil megjegyzések</option>
+            <option value="CSOPORT_UZENETEK">Csoport üzenetek</option>
+            <option value="PRIVAT_UZENETEK">Privát üzenetek</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Kiírat</button>
+    </form>
+    
+      {% block content %}
+      {% if result and columns %}
+            <table>
+                <thead>
+                    <tr>
+                        {% for column in columns %}
+                            <th>{{ column }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+            {% for profil in result %}
+                <tbody>
+                    <tr>
+                        <td>{{ profil[0] }}</td>
+                        <td>{{ profil[1] }}</td>
+                        <td>{{ profil[2] }}</td>
+                        <td>{{ profil[3] }}</td>
+                        <td>{{ profil[4] }}</td>
+                        <td>{{ profil[5] }}</td>
+                        <td>{{ profil[6] }}</td>
+                        <td>{{ profil[7] }}</td>
+                        <td>{{ profil[8] }}</td>
+                        <td>{{ profil[9] }}</td>
+                        <td>{{ profil[10] }}</td>
+                        <td>{{ profil[11] }}</td>
+                    </tr>
+            {% endfor %}
+                </tbody>
+            </table>
+      {% endif %}
+      {% endblock %}
+</body>
+<footer>
+  {% block scripts %}
+  {% endblock %}
+</footer>
+</html>
