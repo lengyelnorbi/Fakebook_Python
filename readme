@@ -3,3 +3,9 @@ cx_Oracle modul letöltése - pip install cx_Oracle --upgrade
 oracle_instant_client letöltése (https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html) - Basic Package windows.x64-12.2.0.1.0.zip -> telepítési mappa hozzáadása a PATH-hoz (rendszerváltozóknál)
 flask modul - pip install FLask
 a program futásához szükséges, hogy a docker-en fusson az adatbázis
+
+xampp - apache -> open xampp/php/php.init  -> remove the semicolon before extension=oci8_12c and extension=pdo_oci
+download cx_Oracle modul - pip install cx_Oracle --upgrade
+download oracle_instant_client (https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html) - Basic Package windows.x64-12.2.0.1.0.zip -> add installation folder to PATH (in system variables)
+install flask modul - pip install FLask
+to be able to run the program, the program's database has to run on docker
